@@ -1,5 +1,8 @@
 package com.diogocapela.pl02;
 
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
 public class Data {
 
     private int ano;
@@ -53,11 +56,22 @@ public class Data {
     };
    
     public Data() {
-        ano = ANO_POR_OMISSAO;
-        mes = MES_POR_OMISSAO;
-        dia = DIA_POR_OMISSAO;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = new Date();
+        String hoje = dateFormat.format(date);
+        String[] dados = hoje.split("-");
+        this.ano = Integer.parseInt(dados[0]);
+        this.mes = Integer.parseInt(dados[1]);
+        this.dia = Integer.parseInt(dados[2]);
     }
-        
+    
+    public Data(String dataString) {
+        String[] dados = dataString.split("-");
+        this.ano = Integer.parseInt(dados[0]);
+        this.mes = Integer.parseInt(dados[1]);
+        this.dia = Integer.parseInt(dados[2]);
+    }
+
     public Data(int ano, int mes, int dia) {        
         this.ano = ano;
         this.mes = mes;
@@ -172,6 +186,23 @@ public class Data {
         totalDias += (isAnoBissexto(ano) && mes > 2) ? 1 : 0;
         totalDias += dia;
         return totalDias;
+    }
+    
+    private void avancarUmDia() {
+        int[] diasPorMesArranged = diasPorMes;
+        if(isAnoBissexto(this.ano)) {
+            diasPorMesArranged[2]++;
+        }
+        if(this.dia >= diasPorMesArranged[this.mes] && this.mes == 12) {
+            this.dia = 1;
+            this.mes = 1;
+            this.ano++;
+        } else if(this.dia >= diasPorMesArranged[this.mes]) {
+            this.dia = 1;
+            this.mes++;
+        } else {
+            this.dia++;
+        }
     }
     
     /**
