@@ -25,3 +25,5 @@ hs_err_pid*
 /pl02/target/
 /pl01/target/
 /pl03/target/
+/pl05/target/
+/pl05/nbproject/
