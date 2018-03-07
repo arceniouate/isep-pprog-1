@@ -56,8 +56,8 @@ public class Data {
     };
    
     public Data() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String hoje = dateFormat.format(date);
         String[] dados = hoje.split("-");
         this.ano = Integer.parseInt(dados[0]);
