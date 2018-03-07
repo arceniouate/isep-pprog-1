@@ -26,7 +26,7 @@ public class TrabalhadorComissao extends Trabalhador {
     /**
      * O valor por omissão do salário base do trabalhador à comissão.
      */
-    private static final float SALARIO_BASE_POR_OMISSAO = 580.0f;
+    private static final float SALARIO_BASE_POR_OMISSAO = 580.8f;
    
     /**
      * O montante por omissão das vendas do trabalhador à comissão.
