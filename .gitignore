@@ -1,4 +1,5 @@
 .DS_Store
+.idea
 
 # Compiled class file
 *.class
@@ -27,3 +28,5 @@ hs_err_pid*
 /pl03/target/
 /pl05/target/
 /pl05/nbproject/
+/pl06/target/
+/pl07/target/
