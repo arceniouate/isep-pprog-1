@@ -48,7 +48,7 @@ public class LojaAncoraExterna extends LojaAncora {
 
     @Override
     public LojaAncoraExterna clone() {
-        return new LojaAncoraExterna(getNome(), getArea(), getCustoSeguranca(), getQuantidadeFuncionarios(), getReceitasAnoAnterior(), getPercentagemDesconto());
+        return new LojaAncoraExterna(this);
     }
 
     @Override

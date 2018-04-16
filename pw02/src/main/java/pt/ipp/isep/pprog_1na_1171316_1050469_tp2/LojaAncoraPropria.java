@@ -12,7 +12,7 @@ public class LojaAncoraPropria extends LojaAncora {
 
     @Override
     public LojaAncoraPropria clone() {
-        return new LojaAncoraPropria(getNome(), getArea(), getCustoSeguranca());
+        return new LojaAncoraPropria(this);
     }
 
     @Override

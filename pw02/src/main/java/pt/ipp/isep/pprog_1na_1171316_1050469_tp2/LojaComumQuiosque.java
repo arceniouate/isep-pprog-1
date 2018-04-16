@@ -12,7 +12,7 @@ public class LojaComumQuiosque extends LojaComum {
 
     @Override
     public LojaComumQuiosque clone() {
-        return new LojaComumQuiosque(getNome(), getArea(), getQuantidadeFuncionarios());
+        return new LojaComumQuiosque(this);
     }
 
     @Override

@@ -38,7 +38,7 @@ public class LojaComumRestauracao extends LojaComum {
 
     @Override
     public LojaComumRestauracao clone() {
-        return new LojaComumRestauracao(getNome(), getArea(), getQuantidadeFuncionarios(), getCustoManutencao(), getQuantidadeMesas());
+        return new LojaComumRestauracao(this);
     }
 
     @Override
