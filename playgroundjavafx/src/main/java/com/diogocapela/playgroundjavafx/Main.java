@@ -29,9 +29,11 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+
+
         Parent root = FXMLLoader.load(getClass().getResource("cenas.fxml"));
 
-        Scene scene = new Scene(root, 500, 500);
+        Scene scene = new Scene(root, 300, 275);
 
         stage.setTitle("FXML Welcome");
         stage.setScene(scene);

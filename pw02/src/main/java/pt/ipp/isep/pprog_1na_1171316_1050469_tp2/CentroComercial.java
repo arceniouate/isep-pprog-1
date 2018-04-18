@@ -12,8 +12,8 @@ public class CentroComercial {
 
     public CentroComercial(String nome, List<Loja> lojas) {
         this.nome = nome;
-        this.lojas = new ArrayList<Loja>();
-        for(Loja loja: lojas) {
+        this.lojas = new ArrayList<>();
+        for (Loja loja : lojas) {
             this.lojas.add(loja.clone());
         }
     }
@@ -21,24 +21,32 @@ public class CentroComercial {
     public String getNome() {
         return this.nome;
     }
-    
-    public List<Loja> getLojas() {
-        return new ArrayList<Loja>(lojas);
-    }
 
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public void setLojas(List<Loja> lojas) {
-        this.lojas = new ArrayList<Loja>(lojas);
+    public List<Loja> getLojas() {
+        List<Loja> copy = new ArrayList<>();
+        for (Loja loja : lojas) {
+            copy.add(loja.clone());
+        }
+        return copy;
     }
-    
+
+    public void setLojas(List<Loja> lojas) {
+        List<Loja> copy = new ArrayList<>();
+        for (Loja loja : lojas) {
+            copy.add(loja.clone());
+        }
+        this.lojas = copy;
+    }
+
     @Override
     public String toString() {
         return String.format("Nome: %s%n", this.nome);
     }
-    
+
     public void adicionarLoja(Loja loja) {
         this.lojas.add(loja.clone());
     }
@@ -72,15 +80,15 @@ public class CentroComercial {
     public double calcularTotalRendas() {
         double total = 0;
         for (Loja loja : getLojas()) {
-           total = total + loja.calcularRenda();
+            total = total + loja.calcularRenda();
         }
         return total;
     }
 
     public double calcularRendasLojasAncora() {
         double rendas = 0;
-        for(Loja loja : getLojas()) {
-            if(loja instanceof LojaAncora) {
+        for (Loja loja : getLojas()) {
+            if (loja instanceof LojaAncora) {
                 rendas = rendas + loja.calcularRenda();
             }
         }
@@ -89,8 +97,8 @@ public class CentroComercial {
 
     public double calcularRendasLojasComuns() {
         double rendas = 0;
-        for(Loja loja : getLojas()) {
-            if(loja instanceof LojaComum) {
+        for (Loja loja : getLojas()) {
+            if (loja instanceof LojaComum) {
                 rendas = rendas + loja.calcularRenda();
             }
         }
@@ -99,8 +107,8 @@ public class CentroComercial {
 
     public double calcularCustoSegurancaLojasAncora() {
         double custo = 0;
-        for(Loja loja : getLojas()) {
-            if(loja instanceof LojaAncora) {
+        for (Loja loja : getLojas()) {
+            if (loja instanceof LojaAncora) {
                 custo = custo + ((LojaAncora) loja).calcularCustoSeguranca();
             }
         }
@@ -110,9 +118,8 @@ public class CentroComercial {
     public CentroComercial clone() {
         return new CentroComercial(getNome(), getLojas());
     }
-    
-}
 
+}
 
 class CompareLojaByRenda implements Comparator<Loja> {
     @Override

@@ -5,8 +5,8 @@ public class LojaComumQuiosque extends LojaComum {
     public LojaComumQuiosque(String nome, double area, int quantidadeFuncionarios) {
         super(nome, area, quantidadeFuncionarios);
     }
-    
-    public LojaComumQuiosque(LojaComumQuiosque loja){
+
+    public LojaComumQuiosque(LojaComumQuiosque loja) {
         this(loja.getNome(), loja.getArea(), loja.getQuantidadeFuncionarios());
     }
 

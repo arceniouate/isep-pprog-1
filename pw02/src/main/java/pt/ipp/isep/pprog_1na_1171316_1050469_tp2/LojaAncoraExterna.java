@@ -12,7 +12,7 @@ public class LojaAncoraExterna extends LojaAncora {
         this.receitasAnoAnterior = receitasAnoAnterior;
         this.percentagemDesconto = percentagemDesconto;
     }
-    
+
     public LojaAncoraExterna(LojaAncoraExterna loja) {
         this(loja.getNome(), loja.getArea(), loja.getCustoSeguranca(), loja.getQuantidadeFuncionarios(), loja.getReceitasAnoAnterior(), loja.getPercentagemDesconto());
     }

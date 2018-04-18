@@ -5,7 +5,7 @@ public class LojaAncoraPropria extends LojaAncora {
     public LojaAncoraPropria(String nome, double area, double custoSeguranca) {
         super(nome, area, custoSeguranca);
     }
-    
+
     public LojaAncoraPropria(LojaAncoraPropria loja) {
         this(loja.getNome(), loja.getArea(), loja.getCustoSeguranca());
     }

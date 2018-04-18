@@ -1,7 +1,7 @@
 package pt.ipp.isep.pprog_1na_1171316_1050469_tp2;
 
 public abstract class Loja {
-    
+
     private String nome;
     private double area;
     static private double rendaFixa = 500;
@@ -12,7 +12,7 @@ public abstract class Loja {
         this.nome = nome;
         this.area = area;
     }
-    
+
     public Loja(Loja loja) {
         this(loja.getNome(), loja.getArea());
     }
@@ -36,7 +36,7 @@ public abstract class Loja {
     static public double getLimiteGrande() {
         return Loja.limiteGrande;
     }
-    
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -63,9 +63,9 @@ public abstract class Loja {
     }
 
     final public String classificarArea() {
-        if(this.area < Loja.limitePequeno)
+        if (this.area < Loja.limitePequeno)
             return "Pequena";
-        else if(this.area < Loja.limiteGrande)
+        else if (this.area < Loja.limiteGrande)
             return "Média";
         return "Grande";
     }
